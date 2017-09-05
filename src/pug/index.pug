@@ -6,6 +6,8 @@ html(lang="en")
 		meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
 		link(rel="stylesheet" href="/css/main.css")
 		link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700" rel="stylesheet")
+		script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
+		script(src="/js/main.js")
 	body
 		header
 			.container
@@ -29,6 +31,6 @@ html(lang="en")
 							| Slack
 				div.community__separator
 				h2 Subscribe for updates
-				form
-					input(placeholder="Enter your email")
+				form(action="https://pitchday.io/api/newsletter" method="post")
+					input(placeholder="Enter your email" name="email")
 					button Subscribe
