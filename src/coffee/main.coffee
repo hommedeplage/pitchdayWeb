@@ -10,7 +10,7 @@ $ ->
 		e.preventDefault()
 		form = $ "form"
 		button.text "Wait..."
-		url = form.attr "action"
+		url = "//" + ApiHost + (form.attr "action")
 		
 		dataArray = form.serializeArray()
 		dataJSON = {}
