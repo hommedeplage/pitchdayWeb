@@ -1,4 +1,9 @@
 $ -> 
+	# ApiHost stores the host for API requests
+	ApiHost = $ "html"
+		.data().host
+	console.log "API host is", ApiHost
+
 	button = $ "button"
 	
 	button.click (e) -> 
@@ -14,9 +19,9 @@ $ ->
 
 		req = $.post url, JSON.stringify(dataJSON), success, "json"
 		req.fail error
-	success = ->
-		button.text "Thanks"
-		console.log "works! 🤘"
+		success = ->
+			button.text "Thanks"
+			console.log "works! 🤘"
 	error = (a) ->
 		if a.status == 409
 			button.text "Done 👍"
@@ -31,3 +36,10 @@ $ ->
 		else 
 			console.log "??"
 			button.text "🐛 bug 😩"
+	
+	do () ->
+		url = "//#{ApiHost}/api/bots/userCounts"
+		req = $.getJSON url, (data) ->
+			$ ".community__counter"
+				.text data.data.telegramCount
+		

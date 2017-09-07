@@ -1,5 +1,5 @@
 doctype html
-html(lang="en")
+html(lang="en" data-host=host)
 	head
 		title Tokenising the Future - Pitchday
 		meta(charset="utf-8")
@@ -21,18 +21,21 @@ html(lang="en")
 					a(href="https://www.coindesk.com/ico-investments-pass-vc-funding-in-blockchain-market-first/" target="_blank") coindesk
 		section.community
 			.container
-				h2 Join the Pitchday Community
+				h2.community__h2 Join the Pitchday Community
+				h3.community__h3 We are 
+					span.community__counter happy
+					|  members
 				ul
 					li
 						a(href="https://t.me/pitchday" target="_black")
 							img(src="/img/telegram.svg" alt="Telegram")
 							| Telegram
-					li
-						a(href="#")
-							img(src="/img/slack.svg" alt="Slack")
-							| Slack
+					//- li
+					//- 	a(href="#")
+					//- 		img(src="/img/slack.svg" alt="Slack")
+					//- 		| Slack
 				div.community__separator
 				h2 Subscribe for updates
-				form(action="https://pitchday.io/api/newsletter" method="post")
+				form(action="//localhost:5000/api/newsletter" method="post")
 					input(placeholder="Enter your email" name="email")
 					button Subscribe

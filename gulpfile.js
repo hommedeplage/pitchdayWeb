@@ -16,9 +16,21 @@ gulp.task('webserver', function() {
 	})
 });
 
-gulp.task('pages', function(){
+gulp.task('pages-prod', function(){
 	return gulp.src('./src/pug/*.pug')
-		.pipe(pug())
+		.pipe(pug({data:{
+			host: "pitchday.io"
+		}}))
+		.on('error', swallowError)
+		.pipe(gulp.dest('./build/'))
+		.pipe(livereload());
+});
+
+gulp.task('pages-dev', function(){
+	return gulp.src('./src/pug/*.pug')
+		.pipe(pug({data:{
+			host: "localhost:5000"
+		}}))
 		.on('error', swallowError)
 		.pipe(gulp.dest('./build/'))
 		.pipe(livereload());
@@ -79,10 +91,30 @@ gulp.task('watch', function() {
 //default
 gulp.task('default',
 			[
+				'message'
+			]
+);
+
+
+
+// prodcution
+gulp.task('prod',
+			[
+				'image',
+				'pages-prod',
+				'styles',
+				'fonts',
+				'coffee',
+			]
+);
+
+// prodcution
+gulp.task('dev',
+			[
 				'webserver',
 				'watch',
 				'image',
-				'pages',
+				'pages-dev',
 				'styles',
 				'fonts',
 				'coffee',
@@ -97,3 +129,10 @@ function swallowError (error) {
 
   this.emit('end')
 }
+
+gulp.task("message", () => {
+	console.log("\033[0;31m Please specify for which environment you are building.\033[0m \r\n")
+	console.log(" Options: \r\n")
+	console.log(" - Production: \"gulp prod\" ")
+	console.log(" - Development: \"gulp dev\" \r\n")
+})
