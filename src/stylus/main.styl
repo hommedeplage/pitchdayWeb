@@ -1,6 +1,14 @@
 @import "includes/reset.css"
 @import "includes/grid"
 
+a
+	color #3186f8
+	&:hover
+		filter opacity(0.7)
+	&:visited
+			color #8d5dfd
+		
+
 body
 	font-family: 'Open Sans', sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -37,6 +45,8 @@ blockquote
 		color #726B8B
 		&:hover
 			color #44386C 
+		&:visited
+			color #44386C 
 	
 header
 	margin-top 44px
@@ -57,10 +67,6 @@ li
 		display block
 		text-decoration none
 		color #44386C
-		&:hover
-			filter opacity(0.7)
-		&:visited
-			color #8d5dfd
 	img
 		vertical-align middle
 		margin-right 15px	
@@ -98,14 +104,23 @@ button
 
 .community
 	margin-bottom 50px
+	&__channels
+		margin 30px
+	&__members
+		text-align center
+		margin 15px
+		color #B3B3B3
+		max-width 600px
+		margin 0 auto
+		
 	&__separator
 		border-top: 1px solid #E1E1E1;
 		margin 0 auto
 		width 120px
 		margin-top 40px
 	&__h2
-		margin 0
+		margin 30px
 	&__h3
-		margin 0 0 30px
+		margin 15px
 	
 	

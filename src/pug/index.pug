@@ -22,10 +22,7 @@ html(lang="en" data-host=host)
 		section.community
 			.container
 				h2.community__h2 Join the Pitchday Community
-				h3.community__h3 We are 
-					span.community__counter happy
-					|  members
-				ul
+				ul.community__channels
 					li
 						a(href="https://t.me/pitchday" target="_black")
 							img(src="/img/telegram.svg" alt="Telegram")
@@ -34,6 +31,11 @@ html(lang="en" data-host=host)
 						a(href="https://pitchday.slack.com" target="_black")
 							img(src="/img/slack.svg" alt="Slack" )
 							| Slack
+				h3.community__h3 We are 
+					span.community__counter happy
+					|  members
+
+				p.community__members Fetching...
 				div.community__separator
 				h2 Subscribe for updates
 				form(action="/api/newsletter" method="post")

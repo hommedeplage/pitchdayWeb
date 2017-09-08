@@ -43,3 +43,20 @@ $ ->
 			$ ".community__counter"
 				.text data.data.telegramCount
 		
+		url = "//#{ApiHost}/api/contributors"
+		req = $.getJSON url, (data) ->
+			data = data.data
+			members = "😎😎😎"
+			console.log data
+			if data.length > 0
+				members = ""
+				data.forEach (member) ->
+					if member.Link.length > 0
+						members += "<a href=\"" + member.Link + "\" target=\"blank\">" + member.Name + "</a>, "
+					else
+						members += member.Name + ", "
+
+				members = members.slice(0,-2)
+			$ ".community__members"
+				.html members
+
