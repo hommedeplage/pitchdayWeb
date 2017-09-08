@@ -5,10 +5,10 @@ html(lang="en" data-host=host)
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
 		include includes/GTMhead.pug
+		<link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
 		link(rel="stylesheet" href="/css/main.css")
 		link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700" rel="stylesheet")
-		script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
-		script(src="/js/main.js")
 	body
 		include includes/GTMbody.pug
 		header
@@ -30,12 +30,37 @@ html(lang="en" data-host=host)
 						a(href="https://t.me/pitchday" target="_black")
 							img(src="/img/telegram.svg" alt="Telegram")
 							| Telegram
-					//- li
-					//- 	a(href="#")
-					//- 		img(src="/img/slack.svg" alt="Slack")
-					//- 		| Slack
+					li
+						a(href="https://pitchday.slack.com" target="_black")
+							img(src="/img/slack.svg" alt="Slack" )
+							| Slack
 				div.community__separator
 				h2 Subscribe for updates
 				form(action="/api/newsletter" method="post")
 					input(placeholder="Enter your email" name="email")
 					button Subscribe
+		script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
+		script(src="/js/main.js")
+		.
+			<script>
+			!function() {
+			  var t;
+			  if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
+			  t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+			  t.factory = function(e) {
+			    return function() {
+			      var n;
+			      return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+			    };
+			  }, t.methods.forEach(function(e) {
+			    t[e] = t.factory(e);
+			  }), t.load = function(t) {
+			    var e, n, o, i;
+			    e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"), 
+			    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js", 
+			    n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+			  });
+			}();
+			drift.SNIPPET_VERSION = '0.3.1';
+			drift.load('3vgi8k5b6r8z');
+			</script>

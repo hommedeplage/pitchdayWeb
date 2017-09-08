@@ -76,7 +76,7 @@ gulp.task('fonts', function(){
 
 gulp.task('watch', function() {
 	livereload.listen();
-	gulp.watch('./src/pug/*.pug', ['pages']);
+	gulp.watch('./src/pug/*.pug', ['pages-dev']);
 	gulp.watch('./src/stylus/**/*.styl', ['styles']);
 	gulp.watch('./src/img/**', ['image']);
 	gulp.watch('./src/coffee/**', ['coffee']);
