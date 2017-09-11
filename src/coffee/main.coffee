@@ -52,7 +52,7 @@ $ ->
 				members = ""
 				data.forEach (member) ->
 					if member.Link.length > 0
-						members += "<a href=\"" + member.Link + "\" target=\"blank\">" + member.Name + "</a>, "
+						members += "<a href=\"" + member.Link + "\" target=\"blank\">" + member.Name + " (" + member.Description + ")" + "</a>, "
 					else
 						members += member.Name + ", "
 

@@ -1,7 +1,11 @@
+- title = "Tokenising the Future - Pitchday"
+- description = "Dream, collaborate, create and prosper."
+
+
 doctype html
 html(lang="en" data-host=host)
 	head
-		title Tokenising the Future - Pitchday
+		title= title
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
 		include includes/GTMhead.pug
@@ -9,6 +13,11 @@ html(lang="en" data-host=host)
 		<link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
 		link(rel="stylesheet" href="/css/main.css")
 		link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700" rel="stylesheet")
+		meta(property="og:title" content=title)
+		meta(property="og:type" content="website")
+		meta(property="og:url" content="https://pitchday.io")
+		meta(property="og:description" content=description)
+		meta(property="og:image" content="https://pitchday.io/img/open-graph.png")
 	body
 		include includes/GTMbody.pug
 		header
@@ -17,8 +26,8 @@ html(lang="en" data-host=host)
 		section.hero
 			.container
 				h1 Tokenising The Future
-				blockquote “For the first time in the technology's short history, blockchain entrepreneurs are now raising more money through initial coin offerings (ICOs) than traditional venture capital investments.” - 
-					a(href="https://www.coindesk.com/ico-investments-pass-vc-funding-in-blockchain-market-first/" target="_blank") coindesk
+				blockquote We vision the old ways of collaborative creation being reborn into a new system. A system of digital democracy and an equalized economy. Inclusion made possible by blockchain and cryptocurrency 
+					a(href="https://www.coindesk.com/ico-investments-pass-vc-funding-in-blockchain-market-first/" target="_blank")
 		section.community
 			.container
 				h2.community__h2 Join the Pitchday Community
