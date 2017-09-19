@@ -1,23 +1,38 @@
 - title = "Tokenising the Future - Pitchday"
 - description = "Dream, collaborate, create and prosper."
 
-
 doctype html
-html(lang="en" data-host=host)
+html(amp lang="en" data-host=host)
 	head
 		title= title
 		meta(charset="utf-8")
-		meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+		meta(name="viewport" content="width=device-width, ,minimum-scale=1,initial-scale=1, shrink-to-fit=no")
 		include includes/GTMhead.pug
-		<link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
-		<link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+		link(rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16")
+		link(rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32")
 		link(rel="stylesheet" href="/css/main.css")
-		link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700" rel="stylesheet")
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700")
 		meta(property="og:title" content=title)
 		meta(property="og:type" content="website")
 		meta(property="og:url" content="https://pitchday.io")
 		meta(property="og:description" content=description)
 		meta(property="og:image" content="https://pitchday.io/img/open-graph.png")
+		script(async src="https://cdn.ampproject.org/v0.js")
+		link(rel="canonical" href="https://pitchday.io")
+		script(type="application/ld+json")
+			.
+				{
+					"@context": "http://schema.org",
+					"@type": "NewsArticle",
+					"headline": "Open-source framework for publishing content",
+					"datePublished": "2015-10-07T12:02:41Z",
+					"image": [
+						"logo.jpg"
+					]
+				}
+		style(amp-boilerplate) body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
+		noscript
+			style(amp-boilerplate) body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}
 	body
 		include includes/GTMbody.pug
 		header
@@ -33,11 +48,11 @@ html(lang="en" data-host=host)
 				h2.community__h2 Join the Pitchday Community
 				ul.community__channels
 					li
-						a(href="https://t.me/pitchday" target="_black")
+						a(href="https://t.me/pitchday_bot" target="_black")
 							img(src="/img/telegram.svg" alt="Telegram")
-							| Telegram
+							| Telegram (recomment)
 					li
-						a(href="https://docs.google.com/forms/d/e/1FAIpQLSekVlhj5x2iAfolpvJSmEhpKSrm4kK9whXOpe-berQDzaNhIg/viewform" target="_black")
+						a(href="https://join.slack.com/t/pitchday/shared_invite/MjM4OTM2ODkxODc4LTE1MDQ4NTE0NDktYzI0NmM2YjI5MA" target="_black")
 							img(src="/img/slack.svg" alt="Slack" )
 							| Slack
 				h3.community__h3 We are 
@@ -46,16 +61,19 @@ html(lang="en" data-host=host)
 
 				p.community__members Fetching...
 				div.community__separator
+		section.genesis
+			.container
+				h2 Read our supporting docs
+				h3 
+					a(href="https://github.com/pitchday/white-paper" target="_blank") White Paper
+				h3 
+					a(href="https://docs.google.com/document/d/1kxFZBdOccDfTmtCSzr1xnM13Gsfcp-GBdriWaaEgmMU" target="_blank") Bounty program
+				h3 
+					a(href="https://docs.google.com/document/d/1xabxcONbB3jQEQR4l8CneXkNvV7ipRZAPVBNGr_HvSo/edit" target="_blank") Contributor program
 				h2 Subscribe for updates
 				form(action="/api/newsletter" method="post")
 					input(placeholder="Enter your email" name="email")
 					button Subscribe
-		section.genesis
-			.container
-				h2 Genesis
-				p We carefully design and refine our PDT token allocation model to make sure Pitchday ecosystem is sustainable and rewarding for every single contributor. 
-					a(href="https://github.com/pitchday/white-paper#pitchday---crowdsale-issue" target="_blank") Check our token genesis
-					|  . By the way, as Pitchday's DNA is a community, we welcome new members to contribute (thanks to GitHub).
 		script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
 		script(src="/js/main.js")
 		.

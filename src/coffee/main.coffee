@@ -17,11 +17,11 @@ $ ->
 		createJSON = (obj) -> dataJSON[obj["name"]] = obj["value"]
 		createJSON array for array in dataArray
 
-		req = $.post url, JSON.stringify(dataJSON), success, "json"
-		req.fail error
 		success = ->
 			button.text "Thanks"
 			console.log "works! 🤘"
+		req = $.post url, JSON.stringify(dataJSON), success(), "json"
+		req.fail error
 	error = (a) ->
 		if a.status == 409
 			button.text "Done 👍"
@@ -33,7 +33,7 @@ $ ->
 			$ "input"
 				.attr "placeholder", a.responseJSON.debug
 				.val("")
-		else 
+		else
 			console.log "??"
 			button.text "🐛 bug 😩"
 	
