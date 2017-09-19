@@ -1,0 +1,39 @@
+@each $name, $value in $text-alignments
+{
+	[class*='-#{$name}']
+	{
+		text-align: $value;
+	}
+}
+
+@each $name, $value in $color-types
+{
+	[class*='-#{$name}']
+	{
+		background-color: $value;
+	}
+	
+	[class*='#{$name}']
+	{
+		color: $value;
+	}
+}
+
+.uppercase
+{
+	text-transform: uppercase;
+}
+
+.no-bullet
+{
+	list-style-type: none;
+}
+
+.inline
+{
+	li
+	{
+		display: inline-block;
+	}
+}
+

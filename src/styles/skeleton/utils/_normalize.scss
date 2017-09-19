@@ -1,0 +1,27 @@
+@import url('~normalize.css');
+*
+{
+	box-sizing: border-box;
+	font-family: map_get($config, default-font-family);
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	
+	&:focus
+	{
+		outline: 0 !important;
+	}
+}
+body
+{
+	position: relative;
+	height: 100%;
+	margin: 0;
+	overflow-x: hidden !important;
+	@extend %font-features;
+}
+
+header, main, footer { @include clear-fix; }
+
+
+a {
+	text-decoration: none;
+}

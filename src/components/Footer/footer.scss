@@ -1,0 +1,44 @@
+@import "../../styles/skeleton/skeleton";
+
+footer
+{
+	text-align: center;
+	padding-bottom: 30px;
+
+	.support-email
+	{
+		position: relative;
+		display: inline-block;
+		@include font-details(19px,400);
+		color: color(purple-5c);
+		text-align: center;
+		text-decoration: none;
+	}
+
+	.social-links
+	{
+		display: block;
+		margin-top: 20px;
+
+		.icon
+		{
+			position: relative;
+			display: inline-block;
+			width: 25px;
+			height: 25px;
+			margin: 0 7.5px;
+			background: no-repeat center;
+			background-size: contain;
+
+			&.github-icon
+			{
+				background-image: svg('github-icon');
+			}
+
+			&.telegram-icon
+			{
+				background-image: svg('telegram-icon-black');
+			}
+		}
+	}
+}

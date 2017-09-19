@@ -1,0 +1,82 @@
+@mixin set-default-container($gutter: map_get($config, gutter))
+{
+	position: relative;
+	max-width: map_get($config, max-width);
+	padding-right: ceil(($gutter / 2));
+	padding-left: floor(($gutter / 2));
+	@include push-auto;
+	@include clear-fix;
+}
+
+@mixin make-row($gutter: map_get($config, gutter))
+{
+	margin-right: floor(($gutter / -2));
+	margin-left: ceil(($gutter / -2));
+	@include clear-fix;
+}
+
+@mixin make-columns($type, $i: 1, $gutter: map_get($config, gutter), $columns : map_get($config, columns))
+{
+	#{generate-columns-list($type)}
+	{
+		position: relative;
+		float: left;
+		min-height: 1px;
+		padding-right: floor(($gutter / 2));
+		padding-left: ceil(($gutter / 2));
+	}
+	
+	@each $item in generate-columns-list($type)
+	{
+		#{$item}
+		{
+			width: percentage(($i / $columns));
+		}
+		$i: $i+1;
+	}
+}
+
+@mixin generate-grid($layouts: map-get($config,layouts))
+{
+	
+	.container, .container-fluid
+	{
+		@include set-default-container;
+	}
+	
+	@each $name, $layout in $layouts
+	{
+		@if (map_has_key($layout, min))
+		{
+			@media(min-width: map_get($layout, min))
+			{
+				@include make-columns($name);
+				
+				.container
+				{
+					width: map_get($container-size, $name);
+				}
+			}
+		}
+		
+		@if (map_has_key($layout, max) and not map_has_key($layout,min))
+		{
+			@media(max-width: map_get($layout, max))
+			{
+				@include make-columns($name);
+				
+				.container
+				{
+					width: map_get($container-size, $name);
+				}
+			}
+		}
+	}
+	
+	.row
+	{
+		@include make-row;
+	}
+}
+
+@include generate-grid;

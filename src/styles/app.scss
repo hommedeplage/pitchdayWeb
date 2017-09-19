@@ -1,0 +1,52 @@
+// Skeleton import
+@import 'skeleton/variables/variables';
+@import 'skeleton/utils/utils';
+@import 'skeleton/grid/grid';
+@import 'skeleton/font/font-face';
+@import "skeleton/helpers/helpers";
+@import "skeleton/components/components";
+@import "skeleton/placeholders/placeholder";
+@import "skeleton/utils/normalize";
+// Custom style
+
+#pitchday
+{
+	position: relative;
+	min-height: 100vh;
+	background: #fafafa;
+	//background: linear-gradient(to bottom, #fdfcff, #fafafa);
+}
+
+.App
+{
+	position: relative;
+	display: block;
+
+	.overlay-photo
+	{
+		position: absolute;
+		display: block;
+		width: 66%;
+		top:79px;
+		right:0;
+		height: 1194px;
+		background: url('../assets/img/app-overlay-photo.png') no-repeat top center;
+		background-size: contain;
+	}
+
+	.container
+	{
+		.wrapper
+		{
+			@media (min-width: map-deep-get($config,media-breakpoints,md,min))
+			{
+				margin-left: percentage((100/12)/100);
+			}
+
+			@media (max-width: 767px)
+			{
+				margin-left: 0;
+			}
+		}
+	}
+}
