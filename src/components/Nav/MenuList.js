@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import smoothScroll from '../../utils/';
+import * as util from '../../utils/';
 
 export default class MenuList extends Component {
 	
@@ -9,13 +9,13 @@ export default class MenuList extends Component {
 	}
 	
 	handleClick = (id) => {
-		smoothScroll.scrollTo(id);
+		util.smoothScroll.scrollTo(id);
 	};
 	
 	render() {
 		return (
 			<ul className="main-nav align-right inline">
-				<li className="active">
+				<li>
 					<a onClick={() => {
 						this.handleClick('how-it-works')
 					}}>
