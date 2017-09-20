@@ -1,0 +1,521 @@
+&.allocation-section
+{
+	margin-top: 110px;
+
+	.section-label
+	{
+		@extend %section-label;
+	}
+
+	.allocation-tabs
+	{
+		margin-top: 20px;
+
+		.tab-headings
+		{
+			margin-bottom: 56px;
+			text-align: center;
+			vertical-align: top;
+
+			.tab-item
+			{
+				position: relative;
+				padding: 18px 48px 17px;
+				border: 1px solid transparent();
+				border-radius: 100px;
+				text-align: center;
+				text-transform: uppercase;
+				@include font-details(19px, 400);
+				color: color(purple-37);
+
+				@include breakpoint(lg)
+				{
+					padding: 14px 35px 13px;
+				}
+
+				@include breakpoint(tbmin)
+				{
+					padding: 10px 20px 9px;
+					font-size: 17px;
+				}
+
+				span
+				{
+					cursor: pointer;
+					transition: color .3s ease-in-out;
+				}
+
+				span:hover
+				{
+					color: color(blue-3a);
+				}
+
+				&.active
+				{
+					cursor: default;
+					border-color: color(blue-3a);
+					color: color(blue-3a);
+					transition: border-color .3s ease-in-out, color .3s ease-in-out;
+				}
+			}
+		}
+
+		.tab-content
+		{
+			text-align: center;
+
+			.content
+			{
+				position: relative;
+
+				&.c1
+				{
+					.allocation-photo
+					{
+						width: 50%;
+						height: 400px;
+						background: png('allocation-chart') no-repeat center;
+						background-size: contain;
+					}
+
+					.chart-text
+					{
+						&.c1
+						{
+							left: -150px;
+							top: 138px;
+						}
+
+						&.c2
+						{
+							right: -107px;
+							bottom: 56px;
+						}
+					}
+
+					@include breakpoint(md)
+					{
+						.chart-text
+						{
+							&.c1
+							{
+								top: 140px;
+							}
+						}
+					}
+
+					@include breakpoint(tbmin)
+					{
+						.chart-text
+						{
+							&.c1
+							{
+								left: -208px;
+							}
+
+							&.c2
+							{
+								right: -164px;
+								bottom: 64px;
+							}
+						}
+					}
+
+					@include breakpoint(tb)
+					{
+						.chart-text
+						{
+							&.c1
+							{
+								top: 142px;
+							}
+						}
+					}
+				}
+
+				&.c2
+				{
+					.allocation-photo
+					{
+						width: 50%;
+						height: 400px;
+						background: png('pie-crowdsale') no-repeat center;
+						background-size: contain;
+					}
+
+					.chart-text
+					{
+						&.c1
+						{
+
+							left: -130px;
+							top: 118px;
+						}
+
+						&.c2
+						{
+							left: 25px;
+							top: 265px;
+						}
+
+						&.c3
+						{
+							left: 183px;
+							bottom: -40px;
+						}
+
+						&.c4
+						{
+							right: 17px;
+							bottom: 6px;
+						}
+
+						&.c5
+						{
+							right: -64px;
+							top: 114px;
+						}
+					}
+
+					@include breakpoint(md)
+					{
+						.chart-text
+						{
+							&.c1
+							{
+
+								left: -174px;
+								top: 122px;
+							}
+
+							&.c2
+							{
+								left: -22px;
+								top: 248px;
+							}
+
+							&.c3
+							{
+								left: 104px;
+								bottom: -14px;
+							}
+
+							&.c4
+							{
+								right: -32px;
+								bottom: 26px;
+							}
+
+							&.c5
+							{
+								right: -106px;
+								top: 118px;
+							}
+						}
+					}
+
+					@include breakpoint(tb)
+					{
+						.chart-text
+						{
+							&.c1
+							{
+
+								left: -174px;
+								top: 124px;
+							}
+
+							&.c2
+							{
+								left: -24px;
+								top: 248px;
+							}
+
+							&.c3
+							{
+								left: 100px;
+								bottom: -12px;
+							}
+
+							&.c4
+							{
+								right: -36px;
+								bottom: 26px;
+							}
+
+							&.c5
+							{
+								right: -106px;
+								top: 120px;
+							}
+						}
+					}
+				}
+
+				&.c3
+				{
+					.allocation-photo
+					{
+						width: 50%;
+						height: 400px;
+						background: png('pie-chart-minning') no-repeat center;
+						background-size: contain;
+					}
+
+					.chart-text
+					{
+						&.c1
+						{
+
+							left: -70px;
+							top: 127px;
+						}
+
+						&.c2
+						{
+							right: 30px;
+							bottom: 6px;
+						}
+
+						&.c3
+						{
+							right: -57px;
+							top: 93px;
+						}
+					}
+
+					@include breakpoint(tbmin)
+					{
+						.chart-text
+						{
+							&.c1
+							{
+								left: -120px;
+								top: 136px;
+							}
+						}
+					}
+
+					@include breakpoint(md)
+					{
+						.chart-text
+						{
+							&.c2
+							{
+								right: -28px;
+								bottom: 20px;
+							}
+
+							&.c3
+							{
+								right: -104px;
+								top: 104px;
+							}
+						}
+					}
+
+					@include breakpoint(tb)
+					{
+						.chart-text
+						{
+							&.c2
+							{
+								right: -28px;
+								bottom: 22px;
+							}
+
+							&.c3
+							{
+								right: -104px;
+								top: 106px;
+							}
+						}
+					}
+				}
+
+				&.c4
+				{
+					.allocation-photo
+					{
+						width: 50%;
+						height: 400px;
+						background: png('pie-chart-funds-use') no-repeat center;
+						background-size: contain;
+					}
+
+					.chart-text
+					{
+						&.c1
+						{
+
+							left: -84px;
+							top: 128px;
+						}
+
+						&.c2
+						{
+							left: -14px;
+							bottom: 3px;
+						}
+
+						&.c3
+						{
+							right: 130px;
+							bottom: -36px;
+						}
+
+						&.c4
+						{
+							right: -40px;
+							bottom: 32px;
+						}
+
+						&.c5
+						{
+							right: -26px;
+							top: 154px;
+						}
+					}
+
+					@include breakpoint(tbmin)
+					{
+						.chart-text
+						{
+							&.c1
+							{
+								left: -136px;
+								top: 136px;
+							}
+
+							&.c4
+							{
+								right: -94px;
+							}
+
+							&.c5
+							{
+								right: -76px;
+							}
+						}
+					}
+
+					@include breakpoint(md)
+					{
+						.chart-text
+						{
+							&.c2
+							{
+								left: -68px;
+								top: 290px;
+							}
+
+							&.c3
+							{
+								right: 58px;
+								bottom: -16px;
+							}
+
+							&.c4
+							{
+								bottom: 44px;
+							}
+
+							&.c5
+							{
+								top: 154px;
+							}
+						}
+					}
+
+					@include breakpoint(tb)
+					{
+						.chart-text
+						{
+							&.c2
+							{
+								left: -70px;
+								top: 286px;
+							}
+
+							&.c3
+							{
+								right: 50px;
+								bottom: -12px;
+							}
+
+							&.c4
+							{
+								bottom: 46px;
+							}
+
+							&.c5
+							{
+								top: 156px;
+							}
+						}
+					}
+				}
+
+				@include breakpoint(lg)
+				{
+					&.c1, &.c2, &.c3, &.c4
+					{
+						.allocation-photo
+						{
+							width: 68%;
+						}
+					}
+				}
+
+				@include breakpoint(tbmin)
+				{
+
+					&.c1, &.c2, &.c3, &.c4
+					{
+						.allocation-photo
+						{
+							width: 60%;
+						}
+					}
+				}
+
+				.allocation-photo
+				{
+					position: relative;
+					display: block;
+					margin: 0 auto 146px;
+				}
+
+				.chart-text
+				{
+					position: absolute;
+
+					.title
+					{
+						display: table;
+						@include font-details(19px, 600);
+						line-height: 26px;
+						text-align: left;
+						color: color(purple-37);
+
+						code
+						{
+							@include font-details(19px, 300);
+							color: color(purple-5c);
+						}
+					}
+
+					.value
+					{
+						position: relative;
+						display: block;
+						line-height: 68px;
+						text-align: left;
+						@include font-details(60px, 100, 'FSAlbertPro');
+						color: color(purple-5c);
+					}
+				}
+			}
+		}
+	}
+}

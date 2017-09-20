@@ -1,0 +1,72 @@
+&.contact-section
+{
+	display: block;
+	margin-top: 100px;
+	margin-bottom: 100px;
+
+	.section-label
+	{
+		@extend %section-label;
+		margin-bottom: 20px;
+	}
+
+	.section-label-sibling
+	{
+		@extend %section-label-sibling;
+		margin-bottom: 70px;
+	}
+
+	.subscribe-form
+	{
+		display: table;
+		margin:0 auto;
+		text-align: center;
+		position: relative;
+
+
+		.error-label
+		{
+			position: absolute;
+			left:27px;
+			bottom:-16px;
+			@include font-details(12px,400);
+			color: color(error);
+		}
+
+		input
+		{
+			position: relative;
+			display: inline-block;
+			padding: 14px 27px;
+			margin-right: 10px;
+			border-radius: 100px;
+			border: 1px solid color(purple-5c);
+			box-shadow: 0 0 0 1000px #fafafa inset;
+			letter-spacing: -.2px;
+			line-height: 20px;
+			@include font-details(15px,600);
+			color: color(purple-5c);
+		}
+
+		.subscribe-button
+		{
+			position: relative;
+			display: inline-block;
+			padding: 15px 30px;
+			border:0;
+			cursor: pointer;
+			@include font-details(15px,600);
+			letter-spacing: -.2px;
+			color: color(white);
+			line-height: 20px;
+			border-radius: 100px;
+			background-color: color(blue-3a);
+			transition: background-color .3s ease-in-out;
+
+			&:hover
+			{
+				background-color: color(blue-42);
+			}
+		}
+	}
+}

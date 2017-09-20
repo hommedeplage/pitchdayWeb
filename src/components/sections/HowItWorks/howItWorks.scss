@@ -1,0 +1,102 @@
+&.how-it-works-section
+{
+	display: block;
+	margin-top: 110px;
+
+	.section-label
+	{
+		@extend %section-label;
+		margin-bottom: 20px;
+	}
+
+	.section-label-sibling
+	{
+		@extend %section-label-sibling;
+		margin-bottom: 30px;
+	}
+
+	.how-it-works-description
+	{
+		position: relative;
+		display: block;
+		width: 60%;
+		margin: 0 auto 100px;
+		text-align: center;
+		@include font-details(19px, 400);
+		color: color(purple-5c);
+
+		@include breakpoint(smmax)
+		{
+			width: 90%;
+		}
+
+		@include breakpoint(tbmin)
+		{
+			width: 85%;
+		}
+
+		@include breakpoint(lg)
+		{
+			width: 80%;
+		}
+	}
+
+	.workers-types
+	{
+		position: relative;
+		display: block;
+		max-width: 770px;
+		margin: 0 auto;
+
+		.worker
+		{
+			position: relative;
+			margin-bottom: 70px;
+
+			&.right
+			{
+				text-align: right;
+			}
+
+			.worker-type
+			{
+				display: block;
+				margin-bottom: 10px;
+
+				.worker-type-icon
+				{
+					position: relative;
+					display: inline-flex;
+					width: 12px;
+					height: 12px;
+					margin-top: 6px;
+					margin-right: 10px;
+					background: svg('worker-type-icon') no-repeat center;
+					background-size: contain;
+				}
+
+				.worker-type-title
+				{
+					display: inline-block;
+					line-height: 24px;
+					text-transform: uppercase;
+					@include font-details(18px, 700);
+					color: color(blue-3a);
+				}
+			}
+
+			.worker-description
+			{
+				position: relative;
+				margin: 0;
+				@include font-details(19px, 400);
+				color: color(purple-5c);
+			}
+		}
+	}
+
+	.jumbotron-button
+	{
+		@extend %jumbotron-button;
+	}
+}
