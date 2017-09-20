@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
+
+import './styles/app.css';
+
 import NavHeader from './components/Nav/NavHeader';
 import Sections from './components/sections';
 import Footer from './components/Footer';
+
 
 class App extends Component {
 	render() {
