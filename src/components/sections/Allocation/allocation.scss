@@ -89,7 +89,7 @@
 						&.c2
 						{
 							right: -107px;
-							bottom: 56px;
+							bottom: 58px;
 						}
 					}
 
@@ -104,7 +104,7 @@
 						}
 					}
 
-					@include breakpoint(tbmin)
+					@media (min-width: 1024px) and (max-width: 1439px)
 					{
 						.chart-text
 						{
@@ -148,14 +148,14 @@
 						&.c1
 						{
 
-							left: -130px;
-							top: 118px;
+							left: -140px;
+							top: 112px;
 						}
 
 						&.c2
 						{
-							left: 25px;
-							top: 265px;
+							left: 15px;
+							top: 262px;
 						}
 
 						&.c3
@@ -166,14 +166,14 @@
 
 						&.c4
 						{
-							right: 17px;
+							right: 10px;
 							bottom: 6px;
 						}
 
 						&.c5
 						{
-							right: -64px;
-							top: 114px;
+							right: -70px;
+							top: 106px;
 						}
 					}
 
@@ -284,7 +284,7 @@
 						}
 					}
 
-					@include breakpoint(tbmin)
+					@media (min-width: 1024px) and (max-width: 1439px)
 					{
 						.chart-text
 						{
@@ -377,7 +377,7 @@
 						}
 					}
 
-					@include breakpoint(tbmin)
+					@media (min-width: 1024px) and (max-width: 1439px)
 					{
 						.chart-text
 						{
@@ -467,7 +467,7 @@
 					}
 				}
 
-				@include breakpoint(tbmin)
+				@media (min-width: 1024px) and (max-width: 1439px)
 				{
 
 					&.c1, &.c2, &.c3, &.c4
