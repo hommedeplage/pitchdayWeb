@@ -1,4 +1,4 @@
-const smoothScroll = {
+export const smoothScroll = {
 	timer: null,
 	
 	stop: function () {
@@ -10,7 +10,7 @@ const smoothScroll = {
 			duration: 1000,
 			easing: {
 				outQuint: function (x, t, b, c, d) {
-					return c*((t=t/d-1)*t*t*t*t + 1) + b;
+					return c * ((t = t / d - 1) * t * t * t * t + 1) + b;
 				}
 			}
 		};
@@ -33,33 +33,39 @@ const smoothScroll = {
 		let delta = nodeTop - offset;
 		let bottomScrollableY = height - windowHeight;
 		let targetY = (bottomScrollableY < delta) ?
-			bottomScrollableY - (height - nodeTop - nodeHeight + offset):
+			bottomScrollableY - (height - nodeTop - nodeHeight + offset) :
 			delta;
 		
 		startTime = Date.now();
 		percentage = 0;
 		
-		if (this.timer) {
+		if (this.timer)
+		{
 			clearInterval(this.timer);
 		}
 		
-		function step () {
+		function step() {
 			let yScroll;
 			let elapsed = Date.now() - startTime;
 			
-			if (elapsed > settings.duration) {
+			if (elapsed > settings.duration)
+			{
 				clearTimeout(this.timer);
 			}
 			
 			percentage = elapsed / settings.duration;
 			
-			if (percentage > 1) {
+			if (percentage > 1)
+			{
 				clearTimeout(this.timer);
 				
-				if (callback) {
+				if (callback)
+				{
 					callback();
 				}
-			} else {
+			}
+			else
+			{
 				yScroll = settings.easing.outQuint(0, elapsed, offset, targetY, settings.duration);
 				window.scrollTo(0, yScroll);
 				this.timer = setTimeout(step, 10);
@@ -70,4 +76,16 @@ const smoothScroll = {
 	}
 };
 
-export default smoothScroll;
+const validateEmail = (email)  =>{
+	// eslint-disable-next-line
+	const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(email);
+};
+
+export const ValidateNewsletter = (email) => {
+	if(validateEmail(email))
+	{
+		return true;
+	}
+};
+
