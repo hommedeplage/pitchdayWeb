@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Logo from './Logo';
 import './nav-header.css';
+
+import Logo from './Logo';
 import MenuList from './MenuList';
 
 export default class NavHeader extends Component {
