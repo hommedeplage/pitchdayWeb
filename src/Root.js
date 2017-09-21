@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './styles/app.css';
 
-import NavHeader from './components/Nav/NavHeader';
+import NavHeader from './components/Nav';
 import Sections from './components/sections';
 import Footer from './components/Footer';
 
