@@ -67,7 +67,7 @@ export default class Allocation extends Component {
 						<div className="content c3">
 							<div className="allocation-photo">
 								<div className="chart-text c1">
-									<span className="title">Community</span>
+									<span className="title">Team and community</span>
 									<span className="value">32%</span>
 								</div>
 								<div className="chart-text c2">

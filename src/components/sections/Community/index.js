@@ -44,7 +44,7 @@ export default class Community extends Component {
 		
 		return (
 			<section className="section community-section" id="community">
-				<div className="section-label">Community</div>
+				<div className="section-label">Team & Community</div>
 				<span className="section-label-sibling">
 					WE ARE {this.state.community.length} AND STILL GROWING</span>
 				<div className="community-list-block">

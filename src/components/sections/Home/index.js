@@ -34,10 +34,9 @@ export default class Home extends Component {
 					</span>
 				</div>
 				<div className="jumbotron-block">
-					<h2 className="jumbotron-heading">Collaborative creation reborn</h2>
+					<h2 className="jumbotron-heading">Unlock innovation by removing collaboration barriers</h2>
 					<p className="jumbotron-paragraph">
-						The Pitchday is a network which allows anyone to collaborate, support and
-						contribute to other participants securely in a decentralized way.
+						Collaboration platform powered by community-generated smart contracts for entrepreneurs, backers and creative individuals.
 					</p>
 					<a href="https://t.me/pitchday_bot" rel="noopener noreferrer" target="_blank"
 					   className="jumbotron-button">
