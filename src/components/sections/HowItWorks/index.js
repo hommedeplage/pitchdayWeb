@@ -20,7 +20,8 @@ export default class HowItWorks extends Component {
 							<span className="worker-type-title">Collaborators</span>
 						</span>
 						<p className="worker-description">
-							Participants earn PDT for joining the platform, connecting to <br/> projects,
+							Participants earn PDT for joining the platform, connecting to <br/>
+							projects,
 							pitching ideas, forming teams and gaining backers.
 						</p>
 					</div>
@@ -30,7 +31,8 @@ export default class HowItWorks extends Component {
 							<span className="worker-type-title">NODES (MINERS)</span>
 						</span>
 						<p className="worker-description">
-							Participants earn PDT for joining the platform, connecting to <br/> projects,
+							Participants earn PDT for joining the platform, connecting to <br/>
+							projects,
 							pitching ideas, forming teams and gaining backers.
 						</p>
 					</div>
@@ -53,7 +55,8 @@ export default class HowItWorks extends Component {
 						</p>
 					</div>
 				</div>
-				<a href="https://t.me/pitchday_bot" rel="noopener noreferrer"  target="_blank" className="jumbotron-button">
+				<a href="https://t.me/pitchday_bot" rel="noopener noreferrer" target="_blank"
+				   className="jumbotron-button">
 					<i className="telegram-icon"/>
 					<span>Join Today</span>
 				</a>

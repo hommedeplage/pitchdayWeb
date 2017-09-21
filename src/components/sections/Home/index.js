@@ -18,7 +18,7 @@ export default class Home extends Component {
 	fetchNews = () => {
 		return fetch(`https://pitchday.io/api/announcements`)
 			.then(response => response.json())
-			.then(json => this.setState({news: json.data[0]}))
+			.then(json => this.setState({ news: json.data[0] }))
 			.catch(er => {
 				console.log(er);
 			});
@@ -39,7 +39,8 @@ export default class Home extends Component {
 						The Pitchday is a network which allows anyone to collaborate, support and
 						contribute to other participants securely in a decentralized way.
 					</p>
-					<a href="https://t.me/pitchday_bot" rel="noopener noreferrer"  target="_blank" className="jumbotron-button">
+					<a href="https://t.me/pitchday_bot" rel="noopener noreferrer" target="_blank"
+					   className="jumbotron-button">
 						<i className="telegram-icon"/>
 						<span>Join Today</span>
 					</a>
