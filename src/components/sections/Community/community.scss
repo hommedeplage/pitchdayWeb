@@ -1,0 +1,60 @@
+&.community-section
+{
+	display: block;
+
+	.section-label
+	{
+		@extend %section-label;
+		margin-bottom: 20px;
+	}
+
+	.section-label-sibling
+	{
+		@extend %section-label-sibling;
+		margin-bottom: 30px;
+	}
+
+	.community-list-block
+	{
+		display: block;
+		margin: 0 auto 70px;
+		text-align: center;
+		width: 60%;
+
+		@media (min-width: 1440px) and (max-width: 1919px)
+		{
+			width: 80%;
+		}
+
+		@media (min-width: 1260px) and (max-width: 1439px)
+		{
+			width: 85%;
+		}
+
+		@media (min-width: 1024px) and (max-width: 1259px)
+		{
+			width: 85%;
+		}
+
+		.contributor
+		{
+			position: relative;
+			@include font-details(19px, 400);
+			color: color(purple-5c);
+			margin: 0 3px;
+			line-height: 26px;
+
+			&.link
+			{
+				@include font-details(19px, 700);
+				color: color(blue-3a);
+				text-decoration: none;
+			}
+		}
+	}
+
+	.jumbotron-button
+	{
+		@extend %jumbotron-button;
+	}
+}

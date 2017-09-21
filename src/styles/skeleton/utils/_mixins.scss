@@ -98,7 +98,7 @@
 }
 
 // Media breakpoint mixin
-@mixin breakpoint($name, $orientation: portrait, $breakpoints: map_get($config, media-breakpoints))
+@mixin breakpoint($name, $orientation: false, $breakpoints: map_get($config, media-breakpoints))
 {
 	@if (map_has_key($breakpoints, $name))
 	{
@@ -108,22 +108,54 @@
 		{
 			@if (map_has_key($breakpoint, max))
 			{
-				@media (min-width: #{map_get($breakpoint,min)}) and (max-width: #{map_get($breakpoint,max)}) and (orientation: $orientation)
+				@if($orientation != false)
 				{
-					@content;
+					@media (min-width: #{map_get($breakpoint,min)}) and (max-width: #{map_get($breakpoint,max)}) and (orientation: $orientation)
+					{
+						@content;
+					}
 				}
+				@else
+				{
+					@media (min-width: #{map_get($breakpoint,min)}) and (max-width: #{map_get($breakpoint,max)})
+					{
+						@content;
+					}
+				}
+
+
 			} @else
 			{
-				@media (min-width: #{map_get($breakpoint,min)}) and (orientation: $orientation)
+				@if($orientation != false)
 				{
-					@content;
+					@media (min-width: #{map_get($breakpoint,min)}) and (orientation: $orientation)
+					{
+						@content;
+					}
+				}
+				@else
+				{
+					@media (min-width: #{map_get($breakpoint,min)})
+					{
+						@content;
+					}
 				}
 			}
 		} @else if (map_has_key($breakpoint, max))
 		{
-			@media (max-width: #{map_get($breakpoint,max)}) and (orientation: $orientation)
+			@if($orientation != false)
 			{
-				@content;
+				@media (max-width: #{map_get($breakpoint,max)}) and (orientation: $orientation)
+				{
+					@content;
+				}
+			}
+			@else
+			{
+				@media (max-width: #{map_get($breakpoint,max)})
+				{
+					@content;
+				}
 			}
 		}
 	} @else

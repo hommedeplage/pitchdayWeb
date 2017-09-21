@@ -1,0 +1,65 @@
+&.home-section
+{
+	margin-top: 213px;
+
+	.fresh-news-badge
+	{
+		position: relative;
+		display: table;
+		margin-bottom: 30px;
+		padding: 5px 15px 4px 5px;
+		border-radius: 30px;
+		background-color: color(grey-ea);
+
+		.badge
+		{
+			position: relative;
+			display: inline-block;
+			margin-right: 15px;
+			padding: 2px 10px 1px;
+			border-radius: 100px;
+			text-align: center;
+			line-height: 17px;
+			@include font-details(12px, 800);
+			color: color(white);
+			background: color(blue-3a);
+
+		}
+
+		.news-title
+		{
+			display: inline-block;
+			line-height: 20px;
+			@include font-details(14px, 700);
+			color: color(purple-5c);
+		}
+	}
+
+	.jumbotron-block
+	{
+		.jumbotron-heading
+		{
+			margin: 0;
+			line-height: 55px;
+			@include font-details(40px, 800, 'OpenSansItalic');
+			font-style: italic;
+			text-transform: uppercase;
+			color: color(purple-37);
+		}
+
+		.jumbotron-paragraph
+		{
+			position: relative;
+			max-width: 607px;
+			margin: 10px 0 0;
+			@include font-details(19px, 400);
+			color: color(purple-5c);
+		}
+
+		.jumbotron-button
+		{
+			@extend %jumbotron-button;
+			margin: 100px 0 0;
+		}
+	}
+}
