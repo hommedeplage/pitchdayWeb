@@ -63,7 +63,7 @@ export default class Community extends Component {
 				<div className="community-list-block">
 					{this.state.community.map(contributors)}
 				</div>
-				<a href="https://t.me/pitchday" rel="noopener noreferrer"  target="_blank" className="jumbotron-button">
+				<a href="https://t.me/pitchday_bot" rel="noopener noreferrer"  target="_blank" className="jumbotron-button">
 					<i className="telegram-icon"/>
 					<span>Join Today</span>
 				</a>
