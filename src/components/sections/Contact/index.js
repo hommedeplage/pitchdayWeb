@@ -61,7 +61,9 @@ export default class Contact extends Component {
 		return (
 			<section className="section contact-section" id="contact">
 				<div className="section-label">Get In Touch</div>
-				<div className="section-label-sibling">SUBSCRIBE FOR UPDATES</div>
+				<div className="section-label-sibling">
+					Subscribe for token sale announcements and updates
+				</div>
 				<div className="subscribe-form">
 					{(this.state.errorMsg !== '') ?
 						<span className="error-label">{this.state.errorMsg}</span> : ''}
