@@ -76,16 +76,46 @@ export const smoothScroll = {
 	}
 };
 
-const validateEmail = (email)  =>{
+const validateEmail = (email) => {
 	// eslint-disable-next-line
 	const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	return re.test(email);
 };
 
 export const ValidateNewsletter = (email) => {
-	if(validateEmail(email))
+	if (validateEmail(email))
 	{
 		return true;
 	}
 };
 
+export const getTranslation = (language) => {
+	return require(`../localization/${language}.json`);
+};
+
+export const getLanguage = (store) => {
+	const languages = navigator.languages
+		? navigator.languages[0]
+		: (navigator.language || navigator.userLanguage);
+	
+	const lang = store.getState().locale.languages.filter(lang => languages.includes(lang.code));
+	
+	if (localStorage.getItem('defaultLocale'))
+	{
+		if (localStorage.getItem('defaultLocale') !== lang[0].code)
+		{
+			localStorage.setItem('defaultLocale', lang[0].code);
+			return lang[0].code;
+		}
+		else
+		{
+			return localStorage.getItem('defaultLocale');
+		}
+	}
+	else
+	{
+		localStorage.setItem('defaultLocale', lang[0].code);
+		return lang[0].code;
+	}
+	
+};
