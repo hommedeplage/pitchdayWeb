@@ -2,18 +2,18 @@
 {
 	display: block;
 	margin-top: 100px;
-	margin-bottom: 100px;
+	margin-bottom: 80px;
 
 	.section-label
 	{
 		@extend %section-label;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 	}
 
 	.section-label-sibling
 	{
 		@extend %section-label-sibling;
-		margin-bottom: 70px;
+		margin-bottom: 90px;
 	}
 
 	.subscribe-form
@@ -39,9 +39,10 @@
 			display: inline-block;
 			padding: 14px 27px;
 			margin-right: 10px;
+			margin-bottom: 20px;
 			border-radius: 100px;
 			border: 1px solid color(purple-5c);
-			box-shadow: 0 0 0 1000px #fafafa inset;
+			box-shadow: 0 0 0 1000px #fff inset;
 			letter-spacing: -.2px;
 			line-height: 20px;
 			@include font-details(15px,600);
@@ -55,6 +56,7 @@
 			padding: 15px 30px;
 			border:0;
 			cursor: pointer;
+			margin-bottom: 20px;
 			@include font-details(15px,600);
 			letter-spacing: -.2px;
 			color: color(white);
