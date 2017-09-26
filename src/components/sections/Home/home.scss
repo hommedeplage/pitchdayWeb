@@ -1,6 +1,7 @@
 &.home-section
 {
-	margin-top: 213px;
+	height: calc(100vh - 121px);
+	padding-top: calc(50vh - 193.5px);
 
 	.fresh-news-badge
 	{
@@ -40,9 +41,7 @@
 		.jumbotron-heading
 		{
 			margin: 0;
-			line-height: 55px;
-			@include font-details(40px, 800, 'OpenSansItalic');
-			font-style: italic;
+			@include font-details(30px, 800);
 			text-transform: uppercase;
 			color: color(purple-37);
 		}
@@ -50,16 +49,10 @@
 		.jumbotron-paragraph
 		{
 			position: relative;
-			max-width: 607px;
+			max-width: 717px;
 			margin: 10px 0 0;
 			@include font-details(19px, 400);
 			color: color(purple-5c);
-		}
-
-		.jumbotron-button
-		{
-			@extend %jumbotron-button;
-			margin: 100px 0 0;
 		}
 	}
 }
