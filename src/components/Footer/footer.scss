@@ -19,6 +19,7 @@ footer
 	{
 		display: block;
 		margin-top: 20px;
+		margin-bottom: 49px;
 
 		.icon
 		{
@@ -40,5 +41,13 @@ footer
 				background-image: svg('telegram-icon-black');
 			}
 		}
+	}
+
+	.copyright
+	{
+		position: relative;
+		@include font-details(12px,400);
+		color: color(purple-5c);
+		text-align: center;
 	}
 }

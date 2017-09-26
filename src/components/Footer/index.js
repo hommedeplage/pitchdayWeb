@@ -17,6 +17,9 @@ export default class Footer extends Component {
 						<i className="icon telegram-icon"/>
 					</a>
 				</div>
+				<div className="copyright">Copyright &copy; {new Date().getFullYear()} Pitchday. All rights
+					reserved
+				</div>
 			</footer>
 		);
 	}
