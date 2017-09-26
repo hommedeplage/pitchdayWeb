@@ -1,11 +1,11 @@
 %section-label
 {
 	position: relative;
-	@include font-details(90px,700);
+	@include font-details(14px,700);
 	text-align: center;
-	line-height: 122px;
+	line-height: 19px;
 	text-transform: uppercase;
-	color: color(grey-ea);
+	color: color(purple-5c);
 }
 
 %section-label-sibling
@@ -13,8 +13,8 @@
 	position: relative;
 	display: block;
 	text-align: center;
-	line-height: 24px;
-	@include font-details(18px,700);
+	text-transform: uppercase;
+	@include font-details(30px,800);
 	color: color(purple-37);
 }
 
