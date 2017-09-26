@@ -58,7 +58,7 @@ export default class HowItWorks extends Component {
 				<a href="https://t.me/pitchday_bot" rel="noopener noreferrer" target="_blank"
 				   className="jumbotron-button">
 					<i className="telegram-icon"/>
-					<span>Join today</span>
+					<span>Join now</span>
 				</a>
 			</section>
 		);
