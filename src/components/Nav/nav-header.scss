@@ -3,7 +3,6 @@
 nav
 {
 	position: relative;
-	overflow: hidden;
 	padding-top: 66px;
 	line-height: 1;
 
@@ -33,11 +32,13 @@ nav
 	{
 		float: right;
 		padding: 0;
-		margin: 26px 0 0;
+		margin: 11px 0 0;
 
 		li
 		{
 			margin-right: 32px;
+			vertical-align: middle;
+
 			a
 			{
 				position: relative;
@@ -53,6 +54,133 @@ nav
 				&:hover
 				{
 					color: color(blue-3a);
+				}
+			}
+
+			&.button-item
+			{
+				margin-right: 27px;
+				margin-left: -5px;
+
+				.jumbotron-button
+				{
+					@extend %jumbotron-button;
+					padding: 7px 24px 9px;
+
+					span
+					{
+						font-size: 14px;
+						line-height: 19px;
+					}
+				}
+			}
+
+			&.selector-item
+			{
+				position: relative;
+
+				.dropdown-block
+				{
+					position: relative;
+					display: block;
+					width: 130px;
+
+					.dropdown-btn
+					{
+						display: block;
+						width: 100%;
+						cursor: pointer;
+						padding: 8px 0 10px;
+						text-align: left;
+						border-radius: 100px;
+						border:1px solid color(purple-5c);
+
+						span
+						{
+							display: inline-block;
+							padding-left: 24px;
+							vertical-align: middle;
+							@include font-details(14px,600);
+							color:color(purple-5c);
+							text-transform: uppercase;
+						}
+
+						i {
+							position: absolute;
+							display: inline-flex;
+							vertical-align: middle;
+							right:24px;
+							top:calc(50% - 4px);
+							width: 10px;
+							height: 10px;
+							background: no-repeat center;
+							background-size: contain;
+							background-image: svg('chevron-icon');
+						}
+					}
+
+					ul
+					{
+						position: absolute;
+						list-style: none;
+						pointer-events: none;
+						visibility: hidden;
+						width: 100%;
+						padding: 0;
+						top:calc(100% + 32px);
+						left:0;
+						border-radius: 6px;
+						background-color: color(white);
+						box-shadow: 0 2px 4px 0 #eae8ef, 0 10px 30px 0 rgba(42, 62, 94, 0.1);
+						transition: visibility .15s ease-in-out, transform .2s linear;
+
+						li
+						{
+							position: relative;
+							margin:0;
+							display: block;
+							cursor: pointer;
+							text-align: center;
+							padding:15px 10px;
+
+							&:last-of-type
+							{
+								&:before
+								{
+									position: absolute;
+									content:'';
+									top:0;
+									left:0;
+									width: 100%;
+									height: 1px;
+									background: color(grey-ea);
+								}
+							}
+
+							span
+							{
+								@include font-details(14px,600);
+								text-transform: uppercase;
+								color:color(purple-5c);
+								transition: color .3s ease-in-out;
+							}
+
+							&:hover
+							{
+								span {
+									color: color(blue-3a);
+								}
+							}
+						}
+
+						&.open
+						{
+							visibility: visible;
+							transform: translateY(-22px);
+							pointer-events: all;
+							transition: visibility 0s ease-in-out, transform .25s linear;
+						}
+					}
 				}
 			}
 

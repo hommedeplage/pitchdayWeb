@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as util from '../../utils/';
+import LanguageSelector from './LanguageSelector';
 
 export default class MenuList extends Component {
 	
@@ -37,13 +38,22 @@ export default class MenuList extends Component {
 					<a onClick={() => {
 						this.handleClick('community')
 					}}>
-						Community</a>
+						Team & Community</a>
 				</li>
 				<li>
 					<a onClick={() => {
 						this.handleClick('contact')
 					}}>
 						Get in Touch</a>
+				</li>
+				<li className="button-item">
+					<a href="https://t.me/pitchday_bot" rel="noopener noreferrer" target="_blank"
+					   className="jumbotron-button">
+						<span>JOIN NOW</span>
+					</a>
+				</li>
+				<li className="selector-item">
+					<LanguageSelector/>
 				</li>
 			</ul>
 		);
