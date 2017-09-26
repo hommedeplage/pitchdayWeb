@@ -102,20 +102,25 @@ export const getLanguage = (store) => {
 	
 	if (localStorage.getItem('defaultLocale'))
 	{
-		if (localStorage.getItem('defaultLocale') !== lang[0].code)
-		{
-			localStorage.setItem('defaultLocale', lang[0].code);
-			return lang[0].code;
-		}
-		else
-		{
+		// if (localStorage.getItem('defaultLocale') !== lang[0].code)
+		// {
+		// 	localStorage.setItem('defaultLocale', lang[0].code);
+		// 	return lang[0].code;
+		// }
+		// else
+		// {
 			return localStorage.getItem('defaultLocale');
-		}
+		// }
 	}
-	else
+	
+	if (lang)
 	{
 		localStorage.setItem('defaultLocale', lang[0].code);
 		return lang[0].code;
 	}
-	
+	else
+	{
+		localStorage.setItem('defaultLocale', 'en');
+		return 'en';
+	}
 };
