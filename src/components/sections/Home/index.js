@@ -34,9 +34,11 @@ export default class Home extends Component {
 					</span>
 				</div>
 				<div className="jumbotron-block">
-					<h2 className="jumbotron-heading">Unlock innovation by removing collaboration barriers</h2>
+					<h2 className="jumbotron-heading">Unlock innovation by removing collaboration
+						barriers</h2>
 					<p className="jumbotron-paragraph">
-						Collaboration platform powered by community-generated smart contracts for entrepreneurs, backers and creative individuals.
+						Collaboration platform powered by community-generated smart contracts for
+						entrepreneurs, backers and creative individuals.
 					</p>
 					<a href="https://t.me/pitchday_bot" rel="noopener noreferrer" target="_blank"
 					   className="jumbotron-button">
