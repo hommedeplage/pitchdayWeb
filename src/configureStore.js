@@ -31,15 +31,18 @@ function configureStore(preloadedState) {
 const languages = [
 	{
 		code: 'en',
-		active:false
+		active:false,
+		name: 'English'
 	},
 	{
 		code: 'ru',
-		active:false
+		active:false,
+		name: 'Русский'
 	},
 	{
 		code: 'zh',
-		active: false
+		active: false,
+		name: '简体中文'
 	}
 ];
 
