@@ -8,8 +8,10 @@ export default class NavHeader extends Component {
 	render() {
 		return (
 			<nav id="home">
-				<Logo/>
-				<MenuList/>
+				<div className="row">
+					<Logo/>
+					<MenuList/>
+				</div>
 			</nav>
 		);
 	}

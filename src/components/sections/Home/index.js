@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import fetch from 'isomorphic-fetch';
+import * as utils from '../../../utils';
 
 export default class Home extends Component {
 	
@@ -9,11 +10,16 @@ export default class Home extends Component {
 			news: []
 		};
 		this.fetchNews = this.fetchNews.bind(this);
+		this.handleClick = this.handleClick.bind(this);
 	}
 	
 	componentDidMount() {
 		this.fetchNews();
 	}
+	
+	handleClick = (id) => {
+		utils.smoothScroll.scrollTo(id);
+	};
 	
 	fetchNews = () => {
 		return fetch(`https://pitchday.io/api/announcements`)
@@ -41,6 +47,10 @@ export default class Home extends Component {
 						entrepreneurs, backers and creative individuals.
 					</p>
 				</div>
+				<button onClick={() => this.handleClick('how-it-works')} className="learn-more-btn">
+					<span>Learn More</span>
+					<i className="arrow-icon"/>
+				</button>
 			</section>
 		);
 	}
