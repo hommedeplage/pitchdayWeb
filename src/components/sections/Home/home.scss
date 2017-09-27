@@ -1,7 +1,8 @@
 &.home-section
 {
 	height: calc(100vh - 121px);
-	padding-top: calc(50vh - 193.5px);
+	position: relative;
+	padding-top: 160px;
 
 	.fresh-news-badge
 	{
@@ -10,7 +11,7 @@
 		margin-bottom: 30px;
 		padding: 5px 15px 4px 5px;
 		border-radius: 30px;
-		background-color: color(grey-ea);
+		background-color: color(white);
 
 		.badge
 		{
@@ -30,7 +31,7 @@
 		.news-title
 		{
 			display: inline-block;
-			line-height: 20px;
+			line-height: 19px;
 			@include font-details(14px, 700);
 			color: color(purple-5c);
 		}
@@ -38,6 +39,8 @@
 
 	.jumbotron-block
 	{
+		margin-bottom: 40px;
+
 		.jumbotron-heading
 		{
 			margin: 0;
@@ -53,6 +56,41 @@
 			margin: 10px 0 0;
 			@include font-details(19px, 400);
 			color: color(purple-5c);
+		}
+	}
+
+	.learn-more-btn
+	{
+		position: absolute;
+		display: block;
+		cursor: pointer;
+		left:0;
+		bottom:85px;
+		border-radius: 100px;
+		padding: 14px 21px;
+		border: 1px solid color(purple-5c);
+		text-align: center;
+		background: transparent;
+
+		span
+		{
+			text-transform: uppercase;
+			display: inline-block;
+			vertical-align: middle;
+			@include font-details(14px,700);
+			color: color(purple-5c);
+		}
+
+		.arrow-icon
+		{
+			display: inline-flex;
+			width: 15px;
+			height: 15px;
+			margin-left: 15px;
+			vertical-align: middle;
+			background: no-repeat center;
+			background-size: contain;
+			background-image: svg('arrow-down');
 		}
 	}
 }

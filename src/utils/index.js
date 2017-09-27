@@ -33,8 +33,8 @@ export const smoothScroll = {
 		let delta = nodeTop - offset;
 		let bottomScrollableY = height - windowHeight;
 		let targetY = (bottomScrollableY < delta) ?
-			bottomScrollableY - (height - nodeTop - nodeHeight + offset) :
-			delta;
+			bottomScrollableY - (height - nodeTop - nodeHeight + offset - 20) :
+			delta - 20;
 		
 		startTime = Date.now();
 		percentage = 0;
