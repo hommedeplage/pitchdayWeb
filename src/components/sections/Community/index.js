@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import fetch from 'isomorphic-fetch';
+import Contributors from './Contributors';
 
 export default class Community extends Component {
 	
@@ -25,35 +26,16 @@ export default class Community extends Component {
 	};
 	
 	render() {
-		const contributors = ({ Id, Name, Link, Description }, index) => {
-			if (Link)
-			{
-				return (
-					<a key={Id} className="contributor link"
-					   href={Link} target="_blank"
-					   rel="noopener noreferrer">{(Name.trim())} ({Description})
-						{(index + 1 === this.state.community.length) ? '' : ','}</a>
-				);
-			}
-			else
-			{
-				return (<span className="contributor" key={Id}>{Name.trim()}
-					{(index + 1 === this.state.community.length) ? '' : ','}</span>);
-			}
-		};
-		
 		return (
 			<section className="section community-section" id="community">
 				<div className="section-label">Team & Community</div>
 				<span className="section-label-sibling">
 					WE ARE {this.state.community.length} AND STILL GROWING</span>
-				<div className="community-list-block">
-					{this.state.community.map((user, index) => contributors(user, index))}
-				</div>
-				<a href="https://t.me/pitchday_bot" rel="noopener noreferrer"
-				   target="_blank" className="jumbotron-button">
+				<Contributors contributors={this.state.community}/>
+				<a href="https://t.me/pitchday_bot" rel="noopener noreferrer" target="_blank"
+				   className="jumbotron-button">
 					<i className="telegram-icon"/>
-					<span>Join today</span>
+					<span>Join now</span>
 				</a>
 			</section>
 		);
