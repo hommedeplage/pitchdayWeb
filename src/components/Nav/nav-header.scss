@@ -193,6 +193,21 @@ nav
 			{
 				margin-right: 0;
 			}
+
+			@include breakpoint(lg)
+			{
+				margin-right: 25px;
+
+				&.button-item
+				{
+					margin-right: 20px;
+				}
+			}
+
+			@include breakpoint(md)
+			{
+				//Todo: make burger
+			}
 		}
 	}
 }
