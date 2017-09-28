@@ -40,15 +40,14 @@ export default class Home extends Component {
 					</span>
 				</div>
 				<div className="jumbotron-block">
-					<h2 className="jumbotron-heading">Unlock innovation by removing collaboration
+					<h2 className="jumbotron-heading">Unlock innovation <br /> removing collaboration
 						barriers</h2>
 					<p className="jumbotron-paragraph">
-						Collaboration platform powered by community-generated smart contracts for
-						entrepreneurs, backers and creative individuals.
+						BlockChain collaboration social network
 					</p>
 				</div>
-				<button onClick={() => this.handleClick('how-it-works')} className="learn-more-btn">
-					<span>Learn More</span>
+				<button onClick={() => this.handleClick('community')} className="learn-more-btn">
+					<span>Pitchday Network</span>
 					<i className="arrow-icon"/>
 				</button>
 			</section>
