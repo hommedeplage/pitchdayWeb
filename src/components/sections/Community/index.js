@@ -28,14 +28,14 @@ export default class Community extends Component {
 	render() {
 		return (
 			<section className="section community-section" id="community">
-				<div className="section-label">Team & Community</div>
+				<div className="section-label">Pitchday Network</div>
 				<span className="section-label-sibling">
-					WE ARE {this.state.community.length} AND STILL GROWING</span>
+					Our Members</span>
 				<Contributors contributors={this.state.community}/>
 				<a href="https://t.me/pitchday_bot" rel="noopener noreferrer" target="_blank"
 				   className="jumbotron-button">
 					<i className="telegram-icon"/>
-					<span>Join now</span>
+					<span>Join network</span>
 				</a>
 			</section>
 		);

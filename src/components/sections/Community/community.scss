@@ -1,6 +1,7 @@
 &.community-section
 {
 	display: block;
+	margin-top: 94px;
 
 	.section-label
 	{
@@ -44,7 +45,7 @@
 				filter: blur(15px);
 			}
 
-			img
+			div
 			{
 				position: relative;
 				width: 160px;
@@ -52,12 +53,46 @@
 				margin: 35px auto 0;
 				display: block;
 				border-radius: 50%;
-				object-fit: cover;
+				background: no-repeat center;
+				background-size: cover;
 				z-index: z-index(default);
 
 				&.empty
 				{
-					border: 1px solid color(grey-ea);
+					border: 1px solid;
+
+					$red: map_get($color-palette, error);
+					$blue: map_get($color-palette, primary);
+					$green: map_get($color-palette, success);
+
+					&:before {
+						position: absolute;
+						content: attr(data-initials);
+						width: 100%;
+						left:0;
+						top:calc(50% - 19px);
+						@include font-details(30px,700);
+						border-radius: 50%;
+						text-align: center;
+					}
+
+					&[data-type = v1]
+					{
+						color: $red;
+						background-color: rgba($red, 0.15);
+					}
+
+					&[data-type = v2]
+					{
+						color: $blue;
+						background-color: rgba($blue, 0.15);
+					}
+
+					&[data-type = v2]
+					{
+						color: $green;
+						background-color: rgba($green, 0.15);
+					}
 				}
 			}
 
