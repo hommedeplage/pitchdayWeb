@@ -9,15 +9,15 @@ import Contact from './Contact';
 import './section.css';
 
 export default class Sections extends Component {
-	render() {
-		return (
-			<main>
-				<Home/>
-				<HowItWorks/>
-				<Allocation/>
-				<Community/>
-				<Contact/>
-			</main>
-		);
-	}
+    render() {
+        return (
+            <main>
+                <Home />
+                <HowItWorks />
+                <Allocation />
+                <Community />
+                <Contact />
+            </main>
+        );
+    }
 }
