@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import fetch from 'isomorphic-fetch';
-import * as util from '../../../utils';
+import * as utils from '../../../utils';
 
 export default class Contact extends Component {
 	
@@ -14,9 +14,9 @@ export default class Contact extends Component {
 	
 	subscribeUser = (input) => {
 		
-		if (!util.ValidateNewsletter(input.value))
+		if (!utils.ValidateNewsletter(input.value))
 		{
-			this.setState({ errorMsg: 'Please enter a valid email' });
+			this.setState(state => ({ ...state, errorMsg: 'Please enter a valid email' }));
 		}
 		else
 		{
@@ -29,7 +29,6 @@ export default class Contact extends Component {
 					})
 				}).then(response => response.json())
 					.then((data) => {
-						
 						if (data.success)
 						{
 							this.input.value = data.message;

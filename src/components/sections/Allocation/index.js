@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 
-
 export default class Allocation extends Component {
 	
 	render() {

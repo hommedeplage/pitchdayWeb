@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import * as util from '../../utils/';
+import * as utils from '../../utils/';
 import LanguageSelector from './LanguageSelector';
 
 export default class MenuList extends Component {
@@ -10,7 +10,7 @@ export default class MenuList extends Component {
 	}
 	
 	handleClick = (id) => {
-		util.smoothScroll.scrollTo(id);
+		utils.smoothScroll.scrollTo(id);
 	};
 	
 	render() {
