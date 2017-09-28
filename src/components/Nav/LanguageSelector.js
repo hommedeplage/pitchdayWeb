@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { findDOMNode } from 'react-dom';
 import { setActiveLanguage, addTranslationForLanguage } from 'react-localize-redux';
 import * as utils from '../../utils';
 
@@ -12,17 +13,11 @@ class LanguageSelector extends Component {
 		};
 		this.handleLanguageChange = this.handleLanguageChange.bind(this);
 		this.handleOpenDropdown = this.handleOpenDropdown.bind(this);
+		this.handleClickOutside = this.handleClickOutside.bind(this);
 	}
 	
-	handleLanguageChange(code) {
-		const { dispatch } = this.props;
-		this.setState({ open: !this.state.open });
-		localStorage.setItem('defaultLocale',code);
-		dispatch(setActiveLanguage(code));
-	}
-	
-	handleOpenDropdown() {
-		this.setState({ open: !this.state.open })
+	componentWillMount() {
+		document.addEventListener('click', this.handleClickOutside, false);
 	}
 	
 	componentDidUpdate(prevProps) {
@@ -34,21 +29,52 @@ class LanguageSelector extends Component {
 		}
 	}
 	
+	componentWillUnmount() {
+		document.removeEventListener('click', this.handleClickOutside, false);
+	}
+	
+	handleClickOutside(e) {
+		if (!findDOMNode(this.dropdown).contains(e.target))
+		{
+			this.setState(state => ({ ...state, open: false }))
+		}
+	};
+	
+	handleLanguageChange(code) {
+		const { dispatch } = this.props;
+		this.setState(state => ({ ...state, open: !state.open }));
+		
+		localStorage.setItem('defaultLocale', code);
+		dispatch(setActiveLanguage(code));
+	}
+	
+	handleOpenDropdown() {
+		this.setState(state => ({ ...state, open: !state.open }));
+	}
+	
 	render() {
 		const { languages, active } = this.props;
+		
+		const languagesList = ({ name, code }) => {
+			return (
+				<li key={code} onClick={() =>
+					this.handleLanguageChange(code)
+				}>
+					<span>{name}</span>
+				</li>
+			);
+		};
+		
 		return (
 			<div className="dropdown-block">
 				<span className="dropdown-btn"
+				      ref={node => this.dropdown = node}
 				      onClick={this.handleOpenDropdown}>
 					<span className="value">{active.name}</span>
 					<i className="icon chevron"/>
 				</span>
 				<ul className={(this.state.open) ? 'open' : ''}>
-					{languages.map((language) =>
-						<li key={language.code}
-						    onClick={() => this.handleLanguageChange(language.code)}>
-							<span>{language.name}</span></li>
-					)}
+					{languages.map((language) => languagesList(language))}
 				</ul>
 			</div>
 		);
