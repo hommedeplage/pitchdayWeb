@@ -1,9 +1,8 @@
 import { combineReducers } from 'redux';
-import {localeReducer as locale} from 'react-localize-redux';
-
+import { localeReducer as locale } from 'react-localize-redux';
 
 const rootReducer = combineReducers({
-	locale
+    locale,
 });
 
 export default rootReducer;
