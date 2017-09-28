@@ -15,47 +15,38 @@ export default class MenuList extends Component {
     render() {
         return (
             <ul className="main-nav align-right inline">
-                <li>
-                    <a
-                        onClick={() => {
-                            this.handleClick('how-it-works');
-                        }}
-                    >
-                        How It works
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="https://github.com/pitchday/white-paper"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        WhitePaper
-                    </a>
-                </li>
-                <li>
-                    <a
-                        onClick={() => {
-                            this.handleClick('allocation');
-                        }}
-                    >
-                        Allocation
-                    </a>
-                </li>
+                {/*<li>*/}
+                {/*<a onClick={() => {*/}
+                {/*this.handleClick('how-it-works')*/}
+                {/*}}>*/}
+                {/*How It works</a>*/}
+                {/*</li>*/}
+                {/*<li>*/}
+                {/*<a href="https://github.com/pitchday/white-paper"*/}
+                {/*target="_blank"*/}
+                {/*rel="noopener noreferrer">*/}
+                {/*WhitePaper</a>*/}
+                {/*</li>*/}
+                {/*<li>*/}
+                {/*<a onClick={() => {*/}
+                {/*this.handleClick('allocation')*/}
+                {/*}}>*/}
+                {/*Allocation</a>*/}
+                {/*</li>*/}
                 <li>
                     <a
                         onClick={() => {
                             this.handleClick('community');
                         }}
                     >
-                        Team & Community
+                        Pitchday Network
                     </a>
                 </li>
                 <li>
                     <a
-                        onClick={() => {
-                            this.handleClick('contact');
-                        }}
+                        href="https://t.me/gpellizzari"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         Get in Touch
                     </a>
@@ -67,7 +58,7 @@ export default class MenuList extends Component {
                         target="_blank"
                         className="jumbotron-button"
                     >
-                        <span>JOIN NOW</span>
+                        <span>Join Network</span>
                     </a>
                 </li>
                 <li className="selector-item">

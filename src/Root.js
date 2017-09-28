@@ -21,28 +21,29 @@ store.dispatch(
 );
 
 class Root extends Component {
-    render() {
-        return (
-            <Provider store={store}>
-                <div className="App">
-                    <div className="container">
-                        <div className="overlay-photo">
-                            <span className="label">Backers</span>
-                            <span className="label">Projects</span>
-                            <span className="label">Smart Contracts</span>
-                        </div>
-                        <div className="row">
-                            <div className="wrapper md10 tablet12 sm12">
-                                <NavHeader />
-                                <Sections />
-                                <Footer />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </Provider>
-        );
-    }
+	
+	render() {
+		return (
+			<Provider store={store}>
+				<div className="App">
+					<div className="container">
+						<div className="overlay-photo">
+							{/*<span className="label">Backers</span>*/}
+							{/*<span className="label">Projects</span>*/}
+							{/*<span className="label">Smart Contracts</span>*/}
+						</div>
+						<div className="row">
+							<div className="wrapper md10 tablet12 sm12">
+								<NavHeader/>
+								<Sections/>
+								<Footer/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</Provider>
+		);
+	}
 }
 
 export default Root;

@@ -123,3 +123,49 @@ export const getLanguage = store => {
         return 'en';
     }
 };
+
+export const getInitials = e => {
+    // eslint-disable-next-line
+    String.prototype.hashCode = function() {
+        let hash = 0;
+        let i;
+        let chr;
+        let len;
+        if (this.length === 0) {
+            return hash;
+        }
+        for (i = 0, len = this.length; i < len; i++) {
+            chr = this.charCodeAt(i);
+            hash = (hash << 5) - hash + chr;
+            hash |= 0; // Convert to 32bit integer
+        }
+        return hash;
+    };
+
+    // eslint-disable-next-line
+    String.prototype.getInitials = function(glue) {
+        if (typeof glue === 'undefined') {
+            // eslint-disable-next-line
+            const glue = true;
+        }
+
+        let initials = this.replace(/[^a-zA-Z- ]/g, '').match(/\b\w/g);
+
+        if (glue) {
+            return initials.join('').substring(0, 2);
+        }
+
+        return initials.substring(0, 2);
+    };
+
+    for (let i = 0; i < e.length; i++) {
+        e[i].setAttribute(
+            'data-initials',
+            e[i].getAttribute('data-name').getInitials(' '),
+        );
+        e[i].setAttribute(
+            'data-type',
+            'v' + Math.abs(e[i].getAttribute('data-name').hashCode()) % 3,
+        );
+    }
+};

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import * as utils from '../../../utils';
 
 const ContributorUser = ({ Name, Description, Link, AvatarUrl }) => {
     return (
@@ -7,10 +8,11 @@ const ContributorUser = ({ Name, Description, Link, AvatarUrl }) => {
                 className="blur"
                 style={{ backgroundImage: `url(${AvatarUrl})` }}
             />
-            <img
-                src={AvatarUrl}
+            <div
+                style={{ backgroundImage: `url(${AvatarUrl})` }}
                 className={AvatarUrl === '' ? 'empty' : ''}
-                alt={Name}
+                id={AvatarUrl === '' ? 'empty' : ''}
+                data-name={Name}
             />
             <span className="name">{Name}</span>
             <span className="role">{Description}</span>
@@ -32,29 +34,39 @@ const ContributorUser = ({ Name, Description, Link, AvatarUrl }) => {
 // 	)
 // };
 
-const Contributors = ({ contributors }) => {
-    const contrib = contributors.filter(c => c.Description === 'contributor');
-    //const user = contributors.filter(u => u.Description !== 'contributor');
+class Contributors extends Component {
+    componentDidUpdate() {
+        utils.getInitials(document.getElementsByClassName('empty'));
+    }
 
-    return (
-        <div className="community-list-block">
-            {contrib.map(c => (
-                <ContributorUser
-                    key={c.Id}
-                    Name={c.Name}
-                    Description={c.Description}
-                    Link={c.Link}
-                    AvatarUrl={c.AvatarUrl}
-                />
-            ))}
-            {/*{user.map(u =>*/}
-            {/*<SimpleUser*/}
-            {/*key={u.Id}*/}
-            {/*created={new Date(u.CreatedAt).getTime()}*/}
-            {/*now={new Date().getTime()}*/}
-            {/*Name={u.Name}/>)}*/}
-        </div>
-    );
-};
+    render() {
+        const { contributors } = this.props;
+
+        const contrib = contributors.filter(
+            c => c.Description === 'contributor',
+        );
+        //const user = contributors.filter(u => u.Description !== 'contributor');
+
+        return (
+            <div className="community-list-block">
+                {contrib.map(c => (
+                    <ContributorUser
+                        key={c.Id}
+                        Name={c.Name}
+                        Description={c.Description}
+                        Link={c.Link}
+                        AvatarUrl={c.AvatarUrl}
+                    />
+                ))}
+                {/*{user.map(u =>*/}
+                {/*<SimpleUser*/}
+                {/*key={u.Id}*/}
+                {/*created={new Date(u.CreatedAt).getTime()}*/}
+                {/*now={new Date().getTime()}*/}
+                {/*Name={u.Name}/>)}*/}
+            </div>
+        );
+    }
+}
 
 export default Contributors;
