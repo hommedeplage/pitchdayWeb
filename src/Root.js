@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import store from './configureStore';
-import { addTranslationForLanguage, setActiveLanguage } from 'react-localize-redux';
+import {
+    addTranslationForLanguage,
+    setActiveLanguage,
+} from 'react-localize-redux';
 import * as utils from './utils';
 
 import './styles/app.css';
@@ -13,7 +16,9 @@ import Footer from './components/Footer';
 const defaultLang = utils.getLanguage(store);
 
 store.dispatch(setActiveLanguage(defaultLang));
-store.dispatch(addTranslationForLanguage(utils.getTranslation(defaultLang), defaultLang));
+store.dispatch(
+    addTranslationForLanguage(utils.getTranslation(defaultLang), defaultLang),
+);
 
 class Root extends Component {
 	

@@ -3,5 +3,5 @@ import { render } from 'react-dom';
 import Root from './Root';
 import registerServiceWorker from './registerServiceWorker';
 
-render(<Root/>, document.getElementById('pitchday'));
+render(<Root />, document.getElementById('pitchday'));
 registerServiceWorker();
