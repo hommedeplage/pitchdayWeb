@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 import Home from './Home/';
-import HowItWorks from './HowItWorks';
-import Allocation from './Allocation';
+// import HowItWorks from './HowItWorks';
+// import Allocation from './Allocation';
 import Community from './Community';
-import Contact from './Contact';
+// import Contact from './Contact';
 
 import './section.css';
 
@@ -13,10 +13,10 @@ export default class Sections extends Component {
 		return (
 			<main>
 				<Home/>
-				<HowItWorks/>
-				<Allocation/>
+				{/*<HowItWorks/>*/}
+				{/*<Allocation/>*/}
 				<Community/>
-				<Contact/>
+				{/*<Contact/>*/}
 			</main>
 		);
 	}
