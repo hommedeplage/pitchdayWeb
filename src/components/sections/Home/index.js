@@ -43,7 +43,7 @@ export default class Home extends Component {
 					<h2 className="jumbotron-heading">Unlock innovation <br /> removing collaboration
 						barriers</h2>
 					<p className="jumbotron-paragraph">
-						BlockChain collaboration social network
+						Blockchain collaboration social network
 					</p>
 				</div>
 				<button onClick={() => this.handleClick('community')} className="learn-more-btn">
