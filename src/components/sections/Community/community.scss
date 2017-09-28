@@ -61,9 +61,9 @@
 				{
 					border: 1px solid;
 
-					$red: map_get($color-palette, error);
-					$blue: map_get($color-palette, primary);
-					$green: map_get($color-palette, success);
+					$purple: #ba86db;
+					$blue:  #56bcd9;
+					$green: #7fbb15;
 
 					&:before {
 						position: absolute;
@@ -78,8 +78,8 @@
 
 					&[data-type = v1]
 					{
-						color: $red;
-						background-color: rgba($red, 0.15);
+						color: $purple;
+						background-color: rgba($purple, 0.15);
 					}
 
 					&[data-type = v2]
@@ -88,7 +88,7 @@
 						background-color: rgba($blue, 0.15);
 					}
 
-					&[data-type = v2]
+					&[data-type = v3]
 					{
 						color: $green;
 						background-color: rgba($green, 0.15);
