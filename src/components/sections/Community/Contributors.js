@@ -3,6 +3,7 @@ import React from 'react';
 const ContributorUser = ({ Name, Description, Link, AvatarUrl }) => {
 	return (
 		<div className="contributor">
+			<span className="blur" style={{backgroundImage: `url(${AvatarUrl})`}}/>
 			<img src={AvatarUrl} className={(AvatarUrl === '') ? 'empty' : ''} alt={Name}/>
 			<span className="name">{Name}</span>
 			<span className="role">{Description}</span>
