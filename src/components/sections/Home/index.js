@@ -40,10 +40,10 @@ export default class Home extends Component {
 					</span>
 				</div>
 				<div className="jumbotron-block">
-					<h2 className="jumbotron-heading">Unlock innovation <br /> removing collaboration
-						barriers</h2>
+					<h2 className="jumbotron-heading">Tokenize the future<br />
+						Unlock innovation</h2>
 					<p className="jumbotron-paragraph">
-						Blockchain collaboration social network
+						Crowdfund your dream project on Pitchday
 					</p>
 				</div>
 				<button onClick={() => this.handleClick('community')} className="learn-more-btn">
